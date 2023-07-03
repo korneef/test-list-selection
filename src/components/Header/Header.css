@@ -1,0 +1,25 @@
+.header {
+    background-color: #6b6b6b;
+    padding: 20px;
+}
+
+.header__nav-bar {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__nav-item {
+    margin-right: 15px;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-link_active {
+    text-decoration: underline;
+}
