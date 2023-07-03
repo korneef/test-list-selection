@@ -5,6 +5,7 @@
 
 .header__nav-bar {
     margin: 0;
+    padding: 0;
     list-style: none;
     display: flex;
     justify-content: center;
@@ -12,6 +13,7 @@
 }
 
 .header__nav-item {
+    margin: 0;
     margin-right: 15px;
 }
 
