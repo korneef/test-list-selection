@@ -7,6 +7,12 @@
     background-color: #d3d3d3;
 }
 
+@media screen and (max-width: 760px) {
+    .list {
+        width: 200px;
+    }
+}
+
 .list__element {
     display: flex;
     justify-content: space-between;
