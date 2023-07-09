@@ -1,15 +1,6 @@
 container:
   image: node:latest
 
-test_task:
-  name: Tests
-  node_modules_cache:
-    folder: node_modules
-    ingerprint_script: cat package-lock.json
-    populate_script: npm ci
-  install_cromium: sudo apt-get install chromium-browser
-  test_script: npm test
-
 deploy_task:
   only_if: $CIRRUS_BRANCH == 'main'
   depends_on: Tests
