@@ -1,9 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
+import { nanoid } from 'nanoid';
 
 interface IList {
   items: IItem[],
   selectedItems: IItem[],
+  history: IHistoryItem[],
+}
+
+interface IHistoryItem {
+  key: string,
+  name: string,
+  type: 'add' | 'delete',
+  date: string
 }
 
 export interface IItem {
@@ -15,6 +24,7 @@ export interface IItem {
 const initialState: IList = {
   items: [],
   selectedItems: [],
+  history: [],
 }
 
 export const listSlice = createSlice({
@@ -38,6 +48,10 @@ export const listSlice = createSlice({
       state.items.push(action.payload);
       state.selectedItems.splice(index, 1);
       return state;
+    },
+    addHistory: (state, action: PayloadAction<{ name: string, type: 'add' | 'delete'}>) => {
+      state.history.push({...action.payload, date: new Date().toLocaleString(), key: nanoid()})
+      return state;
     }
   }
 })
@@ -45,7 +59,8 @@ export const listSlice = createSlice({
 export const {
   createList,
   selectItem,
-  unSelectItem
+  unSelectItem,
+  addHistory
 } = listSlice.actions
 
 export default listSlice.reducer;

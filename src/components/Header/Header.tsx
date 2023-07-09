@@ -15,7 +15,9 @@ function Header() {
     <div className={ className }>
       <ul className={ `${ className }__nav-bar` }>
         <li className={ `${ className }__nav-item` }><NavLink className={ navLinkClass } to={ '/' }>Главная</NavLink></li>
-        <li className={ `${ className }__nav-item` }><NavLink className={ navLinkClass } to={ '/history' }>История</NavLink></li>
+        <li className={ `${ className }__nav-item` }><NavLink className={ navLinkClass } to={ '/history/all' }>История</NavLink></li>
+        <li className={ `${ className }__nav-item` }><NavLink className={ navLinkClass } to={ '/history/add' }>История добавлений</NavLink></li>
+        <li className={ `${ className }__nav-item` }><NavLink className={ navLinkClass } to={ '/history/delete' }>История удалений</NavLink></li>
       </ul>
     </div>
   );

@@ -19,7 +19,7 @@ const dispatch = useAppDispatch()
       <Routes>
         <Route path={ '/' } element={ <HeaderLayout/> }>
           <Route index element={ <HomePage/> }/>
-          <Route path={ 'history' } element={ <History/> }/>
+          <Route path={ 'history/:type' } element={ <History/> }/>
         </Route>
       </Routes>
     </div>

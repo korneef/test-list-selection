@@ -2,7 +2,7 @@
     padding: 8px;
     margin: 5px;
     list-style: none;
-    width: 300px;
+    width: 350px;
     border-radius: 10px;
     background-color: #d3d3d3;
 }
@@ -10,6 +10,7 @@
 .list__element {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 4px;
     padding: 5px 10px;
     border-radius: 10px;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './ListSelection.css';
 import { List } from '../../components';
 import { useAppSelector, useAppDispatch } from '../../app/store/hooks';
-import { selectItem, unSelectItem } from '../../app/store/slices/listSlice';
+import { selectItem, unSelectItem, addHistory } from '../../app/store/slices/listSlice';
 import { IItem } from '../../app/store/slices/listSlice';
 
 const ListSelection: React.FC = () => {
@@ -19,10 +19,12 @@ const ListSelection: React.FC = () => {
 
   const onSelect = (item: IItem) => {
     dispatch(selectItem(item));
+    dispatch(addHistory({name: item.name, type: 'add'}));
   }
 
   const onUnSelect = (item: IItem) => {
     dispatch(unSelectItem(item));
+    dispatch(addHistory({name: item.name, type: 'delete'}));
   }
 
   const setCountHelper = (item: IItem, searchString: string): number => {
