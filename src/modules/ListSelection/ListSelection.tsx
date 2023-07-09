@@ -8,6 +8,7 @@ import { IItem } from '../../app/store/slices/listSlice';
 const ListSelection: React.FC = () => {
   const data = useAppSelector(state => state.list);
   const [searchText, setSearchText] = useState('')
+  const [viewDetails, setViewDetails] = useState(true)
 
   const dispatch = useAppDispatch();
 
@@ -36,14 +37,23 @@ const ListSelection: React.FC = () => {
     }
     return count;
   }
-
+  console.log(viewDetails)
   return (<div className={ className }>
       <div className={ `${ className }__input-wrapper` }>
         <input
           placeholder={ 'Введите текст для поиска' }
-          className={ `${ className }__input` }
+          className={ `${ className }__input-search` }
           value={ searchText }
           onChange={ onChange }/>
+        <label
+          className={ `${ className }__input-details` }
+        >
+          <input
+            type={ 'checkbox' }
+            checked={ viewDetails }
+            onChange={ () => setViewDetails(!viewDetails) }
+          />Показать детали
+        </label>
       </div>
       <div className={ `${ className }__lists` }>
 
@@ -60,7 +70,13 @@ const ListSelection: React.FC = () => {
               key: item.key,
               node: (
                 <>
-                  <div className={ `${ className }__item-text` }>{ item.name }</div>
+                  <div>
+                    <div className={ `${ className }__item-text` }>{ item.name }</div>
+                    { viewDetails ? <div className={ `${ className }__top-list` }>
+                      { item.top_subjects ? item.top_subjects.map(el => <div
+                        className={ `${ className }__top-item` }>{ el }</div>) : null }
+                    </div> : null }
+                  </div>
                   <button
                     className={ `${ className }__item-button` }
                     onClick={ () => onSelect(item) }>
@@ -75,7 +91,13 @@ const ListSelection: React.FC = () => {
             key: item.key,
             node: (
               <>
-                <div className={ `${ className }__item-text` }>{ item.name }</div>
+                <div>
+                  <div className={ `${ className }__item-text` }>{ item.name }</div>
+                  { viewDetails ? <div className={ `${ className }__top-list` }>
+                    { item.top_subjects ? item.top_subjects.map(el => <div
+                      className={ `${ className }__top-item` }>{ el }</div>) : null }
+                  </div> : null }
+                </div>
                 <button
                   className={ `${ className }__item-button` }
                   onClick={ () => onUnSelect(item) }>
