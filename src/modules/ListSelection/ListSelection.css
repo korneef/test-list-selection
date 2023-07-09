@@ -47,7 +47,7 @@
     margin: 1px;
     border-radius: 3px;
     padding: 0 3px;
-    max-width: 120px;
+    max-width: 80px;
     text-overflow: ellipsis;
     overflow: hidden;
 }
