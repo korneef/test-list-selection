@@ -8,7 +8,7 @@ deploy_task:
     ingerprint_script: cat package-lock.json
     populate_script: npm ci
   env:
-    GITHUB_TOKEN: ENCRYPTED[!de19d58412d9a693e1a5967db0ea2f7546c639d56ca326bca3918611574743ca00aebb9ff09395ac53a19c9e2f76622a!]
+    GITHUB_TOKEN: ENCRYPTED[!161ff254c5720102623a83563b4a196e3566acc5de6c172a1383f5cf6f218a035beedec2ee3b5c2c6843625f2a073c7c!]
     USER: korneef
     REPO: test-list-selection
   deploy_script:
