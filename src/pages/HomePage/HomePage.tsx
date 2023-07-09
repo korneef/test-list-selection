@@ -1,9 +1,14 @@
 import React from 'react';
+import ListSelection from '../../modules/ListSelection/ListSelection';
 
-function HomePage() {
-  return (<div>
-      Home Page
-  </div>
+import './HomePage.css'
+
+const HomePage: React.FC = () => {
+  const className = 'home-page'
+  return (
+    <div className={className}>
+      <ListSelection />
+    </div>
   );
 }
 
