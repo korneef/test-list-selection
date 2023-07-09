@@ -1,4 +1,35 @@
 .list-selection {
+
+}
+
+.list-selection__input-wrapper {
+    padding: 10px 0;
+}
+
+.list-selection__input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid black;
+}
+
+.list-selection__input:active, .list-selection__input:focus {
+    outline: none;
+}
+
+.list-selection__lists {
     display: flex;
     justify-content: center;
+}
+
+.list-selection__item-button {
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 50%;
+    background-color: #d3d3d3;
 }

@@ -4,8 +4,6 @@ import { List } from '../../components';
 import { useAppSelector, useAppDispatch } from '../../app/store/hooks';
 import { selectItem, unSelectItem } from '../../app/store/slices/listSlice';
 import { IItem } from '../../app/store/slices/listSlice';
-import { Simulate } from 'react-dom/test-utils';
-import input = Simulate.input;
 
 const ListSelection: React.FC = () => {
   const data = useAppSelector(state => state.list);
@@ -37,9 +35,15 @@ const ListSelection: React.FC = () => {
     return count;
   }
 
-  return (<div>
-      <input value={ searchText } onChange={ onChange }/>
-      <div className={ className }>
+  return (<div className={ className }>
+      <div className={ `${ className }__input-wrapper` }>
+        <input
+          placeholder={ 'Введите текст для поиска' }
+          className={ `${ className }__input` }
+          value={ searchText }
+          onChange={ onChange }/>
+      </div>
+      <div className={ `${ className }__lists` }>
 
         <List data={ data.items
           .filter(item => {
@@ -54,8 +58,12 @@ const ListSelection: React.FC = () => {
               key: item.key,
               node: (
                 <>
-                  <div>{ item.name }</div>
-                  <button onClick={ () => onSelect(item) }>+</button>
+                  <div className={ `${ className }__item-text` }>{ item.name }</div>
+                  <button
+                    className={ `${ className }__item-button` }
+                    onClick={ () => onSelect(item) }>
+                    +
+                  </button>
                 </>)
             }
           })
@@ -65,8 +73,12 @@ const ListSelection: React.FC = () => {
             key: item.key,
             node: (
               <>
-                <div>{ item.name }</div>
-                <button onClick={ () => onUnSelect(item) }>-</button>
+                <div className={ `${ className }__item-text` }>{ item.name }</div>
+                <button
+                  className={ `${ className }__item-button` }
+                  onClick={ () => onUnSelect(item) }>
+                  -
+                </button>
               </>)
           }
         })
