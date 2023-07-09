@@ -37,7 +37,7 @@ const ListSelection: React.FC = () => {
     }
     return count;
   }
-  console.log(viewDetails)
+
   return (<div className={ className }>
       <div className={ `${ className }__input-wrapper` }>
         <input
