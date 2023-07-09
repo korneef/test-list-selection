@@ -1,8 +1,9 @@
-[![Build Status](https://api.cirrus-ci.com/github/korneef/test-list-selection.svg)](https://cirrus-ci.com/github/korneef/checkmypassport)
+## Статус сборки [![Build Status](https://api.cirrus-ci.com/github/korneef/test-list-selection.svg)](https://cirrus-ci.com/github/korneef/checkmypassport)
 
-Ссылка на равернутый проект https://korneef.github.io/test-list-selection
+## Ссылка на равернутый проект 
+### https://korneef.github.io/test-list-selection
 
-# Инструкция по запуску проекта на локальной машине
+## Инструкция по запуску проекта
 
 ### Для запуска проекта требется следующие программное обеспечение:
 Node.js версии *16.14.0* или выше\
