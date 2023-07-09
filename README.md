@@ -1,13 +1,13 @@
 ## Статус сборки [![Build Status](https://api.cirrus-ci.com/github/korneef/test-list-selection.svg)](https://cirrus-ci.com/github/korneef/checkmypassport)
 
-## Ссылка на равернутый проект 
+## Ссылка на развернутый проект 
 ### https://korneef.github.io/test-list-selection
 
-## Инструкция по запуску проекта
+## Инструкция по запуску проекта:
 
 ### Для запуска проекта требется следующие программное обеспечение:
-Node.js версии *16.14.0* или выше\
-npm версии *8.9.12* или выше
+**Node.js** версии *16.14.0* или *выше*\
+**npm** версии *8.9.12* или *выше*
 
 ### 1. Клонирование репозитория
 #### `git clone https://github.com/korneef/test-list-selection`
