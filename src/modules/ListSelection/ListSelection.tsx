@@ -4,6 +4,7 @@ import { List } from '../../components';
 import { useAppSelector, useAppDispatch } from '../../app/store/hooks';
 import { selectItem, unSelectItem, addHistory } from '../../app/store/slices/listSlice';
 import { IItem } from '../../app/store/slices/listSlice';
+import { nanoid } from 'nanoid';
 
 const ListSelection: React.FC = () => {
   const data = useAppSelector(state => state.list);
@@ -74,6 +75,7 @@ const ListSelection: React.FC = () => {
                     <div className={ `${ className }__item-text` }>{ item.name }</div>
                     { viewDetails ? <div className={ `${ className }__top-list` }>
                       { item.top_subjects ? item.top_subjects.map(el => <div
+                        key={nanoid()}
                         className={ `${ className }__top-item` }>{ el }</div>) : null }
                     </div> : null }
                   </div>
@@ -95,6 +97,7 @@ const ListSelection: React.FC = () => {
                   <div className={ `${ className }__item-text` }>{ item.name }</div>
                   { viewDetails ? <div className={ `${ className }__top-list` }>
                     { item.top_subjects ? item.top_subjects.map(el => <div
+                      key={nanoid()}
                       className={ `${ className }__top-item` }>{ el }</div>) : null }
                   </div> : null }
                 </div>
